@@ -22,5 +22,13 @@ export default StyleSheet.create({
     borderColor: '#F0F0F0',
     borderRadius: 10
   },
-  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' }
+  text: { fontSize: 18, color: '#808080', fontWeight: 'bold' },
+  input: {
+    width: 300,
+    height: 40,
+    borderColor: 'grey',
+    margin: 10,
+    padding: 10,
+    borderWidth: 1
+  }
 })

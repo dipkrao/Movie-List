@@ -3,8 +3,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import Home from '../screens/Home/Home.screen'
-import Profile from '../screens/Profile/Profile.screen'
 import Icon from 'react-native-vector-icons/Ionicons'
+import MovieDetail from '../screens/MovieDetail/MovieDetail.screen'
+import MovieDetailsScreen from '../screens/MovieDetail/MovieDetail.screen'
 
 const Stack = createNativeStackNavigator()
 const Tab = createBottomTabNavigator()
@@ -23,8 +24,8 @@ function MyTabs() {
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={Profile}
+        name="Movie"
+        component={MovieDetailsScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({ focused, color, size }) => {
@@ -40,10 +41,20 @@ const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen
+        {/* <Stack.Screen
           name="HomeBase"
           options={{ headerShown: false }}
           component={MyTabs}
+        /> */}
+        <Stack.Screen
+          name="Dashboard"
+          options={{ headerShown: false }}
+          component={Home}
+        />
+        <Stack.Screen
+          name="MovieDetails"
+          options={{ headerShown: false }}
+          component={MovieDetail}
         />
         {/* add your another screen here using -> Stack.Screen */}
       </Stack.Navigator>
